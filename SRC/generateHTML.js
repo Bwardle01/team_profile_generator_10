@@ -1,43 +1,40 @@
-// create the team
-const generateTeam = team => {
+//  Manager card
+const createManager = function (manager) {
+    return `
+    <div class="col-5 mt-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h3>${manager.name}</h3>
+                <h4><i class="managericon">☕ </i>Manager</h4>
+            </div>
+            <div class="card-body">
+                <p class="id">ID: ${manager.id}</p>
+                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                <p class="office">Office Number: ${manager.officeNumber}</p>
+            </div>
+        </div>
+    </div>
+    `;
+}
 
-  // create the manager html
-  const generateManager = manager => {
-      return `
-<div class="card employee-card">
-  <div class="card-header bg-primary text-white">
-      <h2 class="card-title">${manager.getName()}</h2>
-      <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
-  </div>
-  <div class="card-body">
-      <ul class="list-group">
-          <li class="list-group-item">ID: ${manager.getId()}</li>
-          <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-          <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
-      </ul>
-  </div>
-</div>
-      `;
-  };
-
-  // create the html for engineers
-  const generateEngineer = engineer => {
-      return `
-<div class="card employee-card">
-  <div class="card-header bg-primary text-white">
-      <h2 class="card-title">${engineer.getName()}</h2>
-      <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
-  </div>
-  <div class="card-body">
-      <ul class="list-group">
-          <li class="list-group-item">ID: ${engineer.getId()}</li>
-          <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-          <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a></li>
-      </ul>
-  </div>
-</div>
-      `;
-  };
+ // Engineer card
+const createEngineer = function (engineer) {
+    return `
+    <div class="col-5 mt-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h3>${engineer.name}</h3>
+                <h4><i class="engineericon">💻 </i>Engineer</h4>
+            </div>
+            <div class="card-body">
+                <p class="id">ID: ${engineer.id}</p>
+                <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                <p class="github">Github: <a href="https://github.com/${engineer.gitHub}" target="_blank">${engineer.gitHub}</a></p>
+            </div>
+        </div>
+    </div>
+    `
+}
 
   // create the html for interns
   const generateIntern = intern => {

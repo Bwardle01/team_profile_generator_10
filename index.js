@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateHTML = require('./src/generateHTML');
+const generateHTML = require('./SRC/generateHTML');
 
 //linking team profiles
 const Employee = require('./lib/Employee');

@@ -3,10 +3,10 @@ const fs = require('fs');
 const generateHTML = require('./SRC/generateHTML');
 
 //linking team profiles
-const Employee = require('./lib/Employee');
-const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern');
-const Manager = require('./lib/Manager');
+const Employee = require('./Library/Employee');
+const Engineer = require('./Library/Engineer');
+const Intern = require('./Library/Intern');
+const Manager = require('./Library/Manager');
 
 
 //setting array to take in the entire team

@@ -6,13 +6,13 @@
   --white: white;
   --red: rgb(153, 7, 7);
   --darkred: rgb(119, 0, 0);
-  --medred: rgb(255, 180, 180);
-  --ltred: #9b6f6f;
+  --grey: rgb(136, 136, 136);
+  --black: #000000;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--ltred);
+  background-color: var(--black);
 }
 
 #navbar {
@@ -33,7 +33,7 @@ body {
 }
 
 .card-body {
-  background-color: var(--medred);
+  background-color: var(--grey);
   color: var(--white);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

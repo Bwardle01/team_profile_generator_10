@@ -1,19 +1,44 @@
-const Manager = require("../lib/Manager");
+const Manager = require('../lib/Manager');
 
-test("Can create an office number.", () => {
-    const testOfficeNumber = 2;
-    const employeeInstance = new Manager("James", 2, "jamesljenks@gmail.com", testOfficeNumber);
-    expect(employeeInstance.officeNumber).toBe(testOfficeNumber);
+test('creating an Manager object', () => {
+    const manager = new Manager('Erin', 3381, 'erinsawyer504@gmail.com', '555-555-5555');
+
+    expect(manager.name).toEqual(expect.any(String));
+    expect(manager.id).toEqual(expect.any(Number));
+    expect(manager.email).toEqual(expect.any(String));
+    expect(manager.officeNumber).toEqual(expect.any(String));
+});
+// gets name
+test('gets manager name', () => {
+    const manager = new Manager('Erin', 3381, 'erinsawyer504@gmail.com', '555-555-5555');
+
+    expect(manager.getName()).toEqual(expect.any(String));
 });
 
-test("Testing officeNumber will return office number.", () => {
-    const testOfficeNumber = 2;
-    const employeeInstance = new Manager("James", 2, "jamesljenks@gmail.com", testOfficeNumber);
-    expect(employeeInstance.getOfficeNumber()).toBe(testOfficeNumber);
+// gets id 
+test('gets manager ID', () => {
+    const manager = new Manager('Erin', 3381, 'erinsawyer504@gmail.com', '555-555-5555');
+
+    expect(manager.getId()).toEqual(expect.any(Number));
 });
 
-test("Testing role.", () => {
-    const returnValue = "Manager";
-    const employeeInstance = new Manager("James", 2, "jamesljenks@gmail.com", 2);
-    expect(employeeInstance.getRole()).toBe(returnValue);
+// gets email address
+test('gets manager email', () => {
+    const manager = new Manager('Erin', 3381, 'erinsawyer504@gmail.com', '555-555-5555');
+
+    expect(manager.getEmail()).toEqual(expect.stringContaining(manager.email.toString()));
 });
+
+//gets office number
+test('gets manager office number', () => {
+    const manager = new Manager('Erin', 3381, 'erinsawyer504@gmail.com', '555-555-5555');
+    
+    expect(manager.getOfficeNumber()).toEqual(expect.stringContaining(manager.officeNumber.toString()));
+})
+
+// gets role 
+test('gets role of manager', () => {
+    const manager = new Manager('Erin', 3381, 'erinsawyer504@gmail.com', '555-555-5555');
+
+    expect(manager.getRole()).toEqual("Manager");
+}); 

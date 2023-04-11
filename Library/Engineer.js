@@ -1,21 +1,44 @@
-//importing employee class
-const Employee = require("./Employee");
+const Engineer = require('../lib/Engineer');
 
-//setting up Engineer class by extending employee class
-class Engineer extends Employee {
-    constructor(name, id, email, gitHub) {
-        //calling info from employee class
-        super (name, id, email);
-        this.gitHub = gitHub;
-    }
-    getGitHub() {
-        return this.gitHub;
-    }
-    //overriding employee role to  Engineer
-    getRole() {
-        return "Engineer";
-    }
-}
+test('creating an engineer object', () => {
+    const engineer = new Engineer('bronson', 3381, 'bronson@bronson.com', 'bronson123');
 
-//exports data
-module.exports = Engineer;
+    expect(engineer.name).toEqual(expect.any(String));
+    expect(engineer.id).toEqual(expect.any(Number));
+    expect(engineer.email).toEqual(expect.any(String));
+    expect(engineer.gitHub).toEqual(expect.any(String));
+});
+// gets name
+test('gets Engineer name', () => {
+    const engineer = new Engineer('bronson', 3381, 'bronson@bronson.com', 'bronson123');
+
+    expect(engineer.getName()).toEqual(expect.any(String));
+});
+
+// gets id 
+test('gets Engineer ID', () => {
+    const engineer = new Engineer('bronson', 3381, 'bronson@bronson.com', 'bronson123');
+
+    expect(engineer.getId()).toEqual(expect.any(Number));
+});
+
+// gets email address
+test('gets Engineer email', () => {
+    const engineer = new Engineer('bronson', 3381, 'bronson@bronson.com', 'bronson123');
+
+    expect(engineer.getEmail()).toEqual(expect.stringContaining(engineer.email.toString()));
+});
+
+//gets engineer's github username
+test('gets Engineer github username', () => {
+    const engineer = new Engineer('bronson', 3381, 'bronson@bronson.com', 'bronson123');
+
+    expect(engineer.getGitHub()).toEqual(expect.stringContaining(engineer.gitHub.toString()));
+})
+
+// gets role 
+test('gets role of employee', () => {
+    const engineer = new Engineer('bronson', 3381, 'bronson@bronson.com', 'bronson123');
+
+    expect(engineer.getRole()).toEqual("Engineer");
+}); 

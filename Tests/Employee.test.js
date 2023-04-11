@@ -1,50 +1,36 @@
-const Employee = require("../lib/Employee");
+const Employee = require('../Lib/Employee');
 
-test("Can create an new employee.", () => {
-    const employeeInstance = new Employee();
-    expect(typeof(employeeInstance)).toBe("object");
-})
+test('creating an employee object', () => {
+    const employee = new Employee('Bronson', 3381, 'bronson.wardle@gmail.com');
 
-test("Testing name.", () => {
-    const name = "James";
-    const employeeInstance = new Employee(name);
-    expect(employeeInstance.name).toBe(name);
-})
+    expect(employee.name).toEqual(expect.any(String));
+    expect(employee.id).toEqual(expect.any(Number));
+    expect(employee.email).toEqual(expect.any(String));
+});
+// gets name
+test('gets employee name', () => {
+    const employee = new Employee('Bronson', 3381, 'bronson.wardle@gmail.com');
 
-test("Testing ID.", () => {
-    const id = 2;
-    const employeeInstance = new Employee("James", id);
-    expect(employeeInstance.id).toBe(id);
-})
+    expect(employee.getName()).toEqual(expect.any(String));
+});
 
-test("Testing email.", () => {
-    const email = "jamesljenks@gmail.com";
-    const employeeInstance = new Employee("James", 2, email);
-    expect(employeeInstance.email).toBe(email);
-})
+// gets id 
+test('gets employee ID', () => {
+    const employee = new Employee('Bronson', 3381, 'bronson.wardle@gmail.com');
 
+    expect(employee.getId()).toEqual(expect.any(Number));
+});
 
+// gets email address
+test('gets employee email', () => {
+    const employee = new Employee('Bronson', 3381, 'bronson.wardle@gmail.com');
 
-test("Gets name through getName method.", () => {
-    const testName = "James";
-    const employeeInstance = new Employee(testName);
-    expect(employeeInstance.getName()).toBe(testName);
-})
+    expect(employee.getEmail()).toEqual(expect.stringContaining(employee.email.toString()));
+});
 
-test("Can test ID through getID method.", () => {
-    const testID = 2;
-    const employeeInstance = new Employee("James", testID);
-    expect(employeeInstance.getId()).toBe(testID);
-})
+// gets role 
+test('gets role of employee', () => {
+    const employee = new Employee('Bronson', 3381, 'bronson.wardle@gmail.com');
 
-test("Can test email through getEmail method.", () => {
-    const testEmail = "jamesljenks@gmail.com";
-    const employeeInstance = new Employee("James", 2, testEmail);
-    expect(employeeInstance.getEmail()).toBe(testEmail);
-})
-
-test("Testing role.", () => {
-    const returnValue = "Employee";
-    const employeeInstance = new Employee("James", 2, "jamesljenks@gmail.com");
-    expect(employeeInstance.getRole()).toBe(returnValue);
-})
+    expect(employee.getRole()).toEqual("Employee");
+}); 

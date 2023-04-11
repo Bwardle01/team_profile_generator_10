@@ -1,5 +1,5 @@
 //importing employee class
-const Employee = require("./Employee/")
+const Employee = require("./Employee")
 
 //setting up Engineer class by extending employee class
 class Engineer extends Employee {
